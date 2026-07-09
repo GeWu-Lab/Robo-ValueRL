@@ -1,6 +1,16 @@
 {
   "available": [
     "assets/videos/chip-insertion.mp4",
-    "assets/videos/block-disassembly.mp4"
+    "assets/videos/block-disassembly.mp4",
+    "assets/videos/value-progress.mp4",
+    "assets/videos/error-sensitivity.mp4",
+    "assets/videos/history-ablation.mp4",
+    "assets/videos/quality-labels.mp4",
+    "assets/videos/chip-policy.mp4",
+    "assets/videos/residual-gate.mp4",
+    "assets/videos/detailed-chip-2.mp4",
+    "assets/videos/detailed-chip-3.mp4",
+    "assets/videos/detailed-chip-4.mp4",
+    "assets/videos/detailed-block-portrait.mp4"
   ]
 }
