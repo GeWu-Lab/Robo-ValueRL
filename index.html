@@ -10,7 +10,18 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="Robo-ValueRL home">Robo-ValueRL</a>
+    <a class="brand" href="#top" aria-label="Robo-ValueRL home">
+      <img class="project-logo" src="assets/logos/robo-valuerl-logo.png" alt="Robo-ValueRL">
+    </a>
+    <div class="header-logo-group" aria-label="Affiliated labs">
+      <a class="lab-logo-link" href="https://gewu-lab.github.io/" aria-label="GeWu-Lab website">
+        <img class="lab-logo gewu-logo" src="assets/logos/gewu-lab.png" alt="GeWu-Lab">
+      </a>
+      <span class="logo-separator" aria-hidden="true">&times;</span>
+      <a class="lab-logo-link" href="https://www.x-humanoid.com/" aria-label="X-Humanoid website">
+        <img class="lab-logo xhumanoid-logo" src="assets/logos/x-humanoid.png" alt="X-Humanoid">
+      </a>
+    </div>
   </header>
 
   <nav class="side-nav" aria-label="Project sections">
@@ -18,6 +29,7 @@
     <a href="#tasks">Tasks</a>
     <a href="#method">Method</a>
     <a href="#results">Results</a>
+    <a href="#condition">Condition</a>
     <a href="#citation">Citation</a>
   </nav>
 
@@ -27,12 +39,15 @@
       <h1>Robo-ValueRL: Reliable Value Estimation for Offline-to-Online Reinforcement Learning</h1>
       <div class="paper-meta" aria-label="Authors and affiliations">
         <p class="authors">
-          Wenke Xia<sup>1,*</sup>, Pei Ren<sup>2,*</sup>, Wenbo Yu<sup>3</sup>,
+          <a href="https://xwinks.github.io/">Wenke Xia</a><sup>1,*</sup>,
+          <a href="https://scholar.google.com/citations?user=hcqLADMAAAAJ&amp;hl=zh-CN">Pei Ren</a><sup>2,*</sup>,
+          <a href="https://namelesscrew.github.io/">Wenbo Yu</a><sup>3</sup>,
           Yizhuo Zhang<sup>1</sup>, Jifan Li<sup>1</sup>, Yixue Zhang<sup>2,4</sup>,
-          Yinuo Zhao<sup>2</sup>, Qingyang Gao<sup>2</sup>,
+          <a href="https://nuomizai.github.io/">Yinuo Zhao</a><sup>2</sup>, Qingyang Gao<sup>2</sup>,
           <br class="author-break">
-          <span class="author-second-line">Jianlong Fu<sup>5</sup>,
-          Jian Tang<sup>2</sup>, Zhengping Che<sup>2,&dagger;</sup>, Di Hu<sup>1,&dagger;</sup></span>
+          <span class="author-second-line"><a href="https://www.microsoft.com/en-us/research/people/jianf/">Jianlong Fu</a><sup>5</sup>,
+          Jian Tang<sup>2</sup>, <a href="https://chezhengping.xyz/">Zhengping Che</a><sup>2,&dagger;</sup>,
+          <a href="https://dtaoo.github.io/">Di Hu</a><sup>1,&dagger;</sup></span>
         </p>
         <ol class="affiliations">
           <li><sup>1</sup> Gaoling School of Artificial Intelligence, Renmin University of China, Beijing</li>
@@ -80,12 +95,14 @@
         </a>
       </div>
 
-      <div class="video-placeholder hero-video" data-video="assets/videos/overview.mp4" role="img" aria-label="Overview video placeholder for Robo-ValueRL">
-        <span class="play-mark" aria-hidden="true"></span>
-        <div>
-          <strong>Overview Video</strong>
-          <p>Placeholder for the full Robo-ValueRL system introduction.</p>
-        </div>
+      <div class="youtube-video hero-video" aria-label="Robo-ValueRL overview video">
+        <iframe
+          src="https://www.youtube.com/embed/GeTokXSw57c?rel=0"
+          title="Robo-ValueRL Overview Video"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
       </div>
     </section>
 
@@ -95,7 +112,7 @@
         <h2>Two real-robot testbeds for value-guided policy improvement.</h2>
       </div>
 
-      <div class="task-showcase" data-task-showcase>
+      <div class="task-showcase" data-task-showcase data-task-autoplay="true">
         <div class="task-copy-stack" role="tablist" aria-label="Task demo selector">
           <button class="task-copy task-selector-card is-active" type="button" data-task-target="chip" aria-current="true">
             <p class="task-label">Precision-critical manipulation</p>
@@ -114,7 +131,7 @@
 
         <div class="task-video-rail" aria-label="Task videos">
           <article class="task-video-panel is-active" data-task-target="chip" data-task-media="chip" tabindex="0" aria-label="Play chip insertion video">
-            <div class="video-placeholder task-video portrait-video" data-video="assets/videos/chip-insertion.mp4" data-video-ready="true" role="img" aria-label="Chip insertion video">
+            <div class="video-placeholder task-video portrait-video" data-video="assets/videos/chip-insertion.mp4" data-video-ready="true" data-aspect="368 / 640" role="img" aria-label="Chip insertion video">
               <span class="play-mark" aria-hidden="true"></span>
               <div>
                 <strong>Chip Insertion</strong>
@@ -124,7 +141,7 @@
           </article>
 
           <article class="task-video-panel" data-task-target="block" data-task-media="block" tabindex="0" aria-label="Play block disassembly video">
-            <div class="video-placeholder task-video portrait-video" data-video="assets/videos/block-disassembly.mp4" data-video-ready="true" role="img" aria-label="Block disassembly video">
+            <div class="video-placeholder task-video portrait-video" data-video="assets/videos/block-disassembly.mp4" data-video-ready="true" data-aspect="368 / 640" role="img" aria-label="Block disassembly video">
               <span class="play-mark" aria-hidden="true"></span>
               <div>
                 <strong>Block Disassembly</strong>
@@ -154,7 +171,7 @@
             <h3>History-conditioned value estimator</h3>
             <p>Recent visual history reduces ambiguity from occlusions, repeated motions, and visually similar task stages. The three clips can later show value progress, error sensitivity, and history ablations.</p>
           </div>
-          <div class="video-switcher" data-switcher>
+          <div class="video-switcher" data-switcher data-autoplay="true" data-interval="8000">
             <div class="switcher-tabs" role="tablist" aria-label="Value estimator videos">
               <button type="button" class="is-active" data-panel="value-progress">Value Progress</button>
               <button type="button" data-panel="error-sensitivity">Error Sensitivity</button>
@@ -162,19 +179,19 @@
             </div>
             <div class="switcher-stage">
               <div class="switcher-panel is-active" data-panel-id="value-progress">
-                <div class="video-placeholder method-video" data-video="assets/videos/value-progress.mp4" role="img" aria-label="Value progress video placeholder">
+                <div class="video-placeholder method-video" data-video="assets/videos/value-progress.mp4" data-aspect="1008 / 586" data-marker="Value Signal" data-note="Dense value estimates rise along successful progress." role="img" aria-label="Value progress video placeholder">
                   <span class="play-mark" aria-hidden="true"></span>
                   <div><strong>Value Progress</strong><p>Estimator demo placeholder</p></div>
                 </div>
               </div>
               <div class="switcher-panel" data-panel-id="error-sensitivity">
-                <div class="video-placeholder method-video" data-video="assets/videos/error-sensitivity.mp4" role="img" aria-label="Error sensitivity video placeholder">
+                <div class="video-placeholder method-video" data-video="assets/videos/error-sensitivity.mp4" data-aspect="1008 / 586" data-marker="Error Cue" data-note="Sharp drops highlight unstable or low-quality states." role="img" aria-label="Error sensitivity video placeholder">
                   <span class="play-mark" aria-hidden="true"></span>
                   <div><strong>Error Sensitivity</strong><p>Estimator demo placeholder</p></div>
                 </div>
               </div>
               <div class="switcher-panel" data-panel-id="history-ablation">
-                <div class="video-placeholder method-video" data-video="assets/videos/history-ablation.mp4" role="img" aria-label="History ablation video placeholder">
+                <div class="video-placeholder method-video" data-video="assets/videos/history-ablation.mp4" data-aspect="1008 / 586" data-marker="History Window" data-note="Temporal context separates visually similar stages." role="img" aria-label="History ablation video placeholder">
                   <span class="play-mark" aria-hidden="true"></span>
                   <div><strong>History Ablation</strong><p>Estimator demo placeholder</p></div>
                 </div>
@@ -189,29 +206,22 @@
             <h3>Quality-conditioned consistency policy</h3>
             <p>Value differences become action-quality indicators for efficient one-step action generation under high-frequency control. This group can show quality labels and task-specific policy behavior.</p>
           </div>
-          <div class="video-switcher" data-switcher>
+          <div class="video-switcher" data-switcher data-autoplay="true" data-interval="8000">
             <div class="switcher-tabs" role="tablist" aria-label="Policy pretraining videos">
-              <button type="button" class="is-active" data-panel="quality-labels">Quality Labels</button>
-              <button type="button" data-panel="chip-policy">Chip Policy</button>
-              <button type="button" data-panel="block-policy">Block Policy</button>
+              <button type="button" class="is-active" data-panel="quality-labels">Policy Demo 1</button>
+              <button type="button" data-panel="chip-policy">Policy Demo 2</button>
             </div>
             <div class="switcher-stage">
               <div class="switcher-panel is-active" data-panel-id="quality-labels">
-                <div class="video-placeholder method-video" data-video="assets/videos/quality-labels.mp4" role="img" aria-label="Quality labels video placeholder">
+                <div class="video-placeholder method-video" data-video="assets/videos/quality-labels.mp4" data-aspect="1008 / 736" role="img" aria-label="Policy demo 1 video placeholder">
                   <span class="play-mark" aria-hidden="true"></span>
-                  <div><strong>Quality Labels</strong><p>Policy demo placeholder</p></div>
+                  <div><strong>Policy Demo 1</strong><p>Policy demo placeholder</p></div>
                 </div>
               </div>
               <div class="switcher-panel" data-panel-id="chip-policy">
-                <div class="video-placeholder method-video" data-video="assets/videos/chip-policy.mp4" role="img" aria-label="Chip policy video placeholder">
+                <div class="video-placeholder method-video" data-video="assets/videos/chip-policy.mp4" data-aspect="1008 / 736" role="img" aria-label="Policy demo 2 video placeholder">
                   <span class="play-mark" aria-hidden="true"></span>
-                  <div><strong>Chip Policy</strong><p>Policy demo placeholder</p></div>
-                </div>
-              </div>
-              <div class="switcher-panel" data-panel-id="block-policy">
-                <div class="video-placeholder method-video" data-video="assets/videos/block-policy.mp4" role="img" aria-label="Block policy video placeholder">
-                  <span class="play-mark" aria-hidden="true"></span>
-                  <div><strong>Block Policy</strong><p>Policy demo placeholder</p></div>
+                  <div><strong>Policy Demo 2</strong><p>Policy demo placeholder</p></div>
                 </div>
               </div>
             </div>
@@ -224,31 +234,10 @@
             <h3>Online residual adaptation</h3>
             <p>High-quality rollout segments train a lightweight adapter while preserving the pretrained base behavior. Later videos can show the residual gate, self-correction, and failure recovery.</p>
           </div>
-          <div class="video-switcher" data-switcher>
-            <div class="switcher-tabs" role="tablist" aria-label="Online adaptation videos">
-              <button type="button" class="is-active" data-panel="residual-gate">Residual Gate</button>
-              <button type="button" data-panel="self-correction">Self-Correction</button>
-              <button type="button" data-panel="failure-recovery">Failure Recovery</button>
-            </div>
-            <div class="switcher-stage">
-              <div class="switcher-panel is-active" data-panel-id="residual-gate">
-                <div class="video-placeholder method-video" data-video="assets/videos/residual-gate.mp4" role="img" aria-label="Residual gate video placeholder">
-                  <span class="play-mark" aria-hidden="true"></span>
-                  <div><strong>Residual Gate</strong><p>Adaptation demo placeholder</p></div>
-                </div>
-              </div>
-              <div class="switcher-panel" data-panel-id="self-correction">
-                <div class="video-placeholder method-video" data-video="assets/videos/self-correction.mp4" role="img" aria-label="Self-correction demo placeholder">
-                  <span class="play-mark" aria-hidden="true"></span>
-                  <div><strong>Self-Correction</strong><p>Adaptation demo placeholder</p></div>
-                </div>
-              </div>
-              <div class="switcher-panel" data-panel-id="failure-recovery">
-                <div class="video-placeholder method-video" data-video="assets/videos/failure-recovery.mp4" role="img" aria-label="Failure recovery demo placeholder">
-                  <span class="play-mark" aria-hidden="true"></span>
-                  <div><strong>Failure Recovery</strong><p>Adaptation demo placeholder</p></div>
-                </div>
-              </div>
+          <div class="single-method-video">
+            <div class="video-placeholder method-video method-video-direct" data-video="assets/videos/residual-gate.mp4" data-aspect="672 / 384" data-direct-autoplay="true" role="img" aria-label="Residual gate video">
+              <span class="play-mark" aria-hidden="true"></span>
+              <div><strong>Residual Gate</strong><p>Adaptation demo placeholder</p></div>
             </div>
           </div>
         </article>
@@ -283,8 +272,7 @@
 
       <div class="result-layout">
         <figure class="figure-panel">
-          <img src="assets/figures/value-diagnostics.png" alt="Value reliability diagnostics and estimated value curves">
-          <figcaption>Short-history value estimates produce smoother normal trajectories and sharper responses to execution errors.</figcaption>
+          <img src="assets/figures/value-diagnostics.png" alt="Value estimation metrics and downstream success rate">
         </figure>
         <div class="result-copy">
           <h3>From value reliability to policy improvement</h3>
@@ -299,12 +287,12 @@
 
       <div class="evidence-grid">
         <figure class="figure-panel compact">
-          <img src="assets/figures/offline-results.png" alt="Offline policy learning results">
-          <figcaption>Value-guided offline pretraining scales under mixed-quality demonstrations.</figcaption>
+          <img src="assets/figures/offline-results.png" alt="Offline pretraining scaling with heterogeneous data">
+          <figcaption>Offline pretraining scaling with heterogeneous data</figcaption>
         </figure>
         <figure class="figure-panel compact">
-          <img src="assets/figures/online-results.png" alt="Online policy improvement results">
-          <figcaption>Reliable value guidance stabilizes real-world online improvement.</figcaption>
+          <img src="assets/figures/online-results.png" alt="Success rate and failure-mode distribution">
+          <figcaption>Success rate and failure-mode distribution</figcaption>
         </figure>
       </div>
 
@@ -314,15 +302,63 @@
           <h3>Recovery behavior belongs with the evidence.</h3>
           <p>Failure recovery, self-correction, and online adaptation are treated as method/result evidence rather than intro tasks.</p>
         </div>
-        <div class="demo-grid secondary-demos">
-          <div class="video-placeholder small-demo" data-video="assets/videos/failure-recovery.mp4" role="img" aria-label="Failure recovery demo placeholder">
-            <span class="play-mark" aria-hidden="true"></span>
-            <div>
-              <strong>Failure Recovery</strong>
-              <p>Results demo placeholder</p>
+        <div class="detailed-demo-gallery" aria-label="Detailed recovery behavior demos">
+          <figure class="demo-card demo-card-main">
+            <div class="video-placeholder demo-video" data-video="assets/videos/detailed-chip-2.mp4" data-aspect="1280 / 720" data-direct-autoplay="true" role="img" aria-label="Detailed chip recovery demo 1">
+              <span class="play-mark" aria-hidden="true"></span>
+              <div><strong>Chip Recovery 1</strong><p>Detailed demo loading area</p></div>
             </div>
+          </figure>
+          <figure class="demo-card">
+            <div class="video-placeholder demo-video" data-video="assets/videos/detailed-chip-3.mp4" data-aspect="1280 / 720" data-direct-autoplay="true" role="img" aria-label="Detailed chip recovery demo 2">
+              <span class="play-mark" aria-hidden="true"></span>
+              <div><strong>Chip Recovery 2</strong><p>Detailed demo loading area</p></div>
+            </div>
+          </figure>
+          <figure class="demo-card">
+            <div class="video-placeholder demo-video" data-video="assets/videos/detailed-chip-4.mp4" data-aspect="1280 / 720" data-direct-autoplay="true" role="img" aria-label="Detailed chip recovery demo 3">
+              <span class="play-mark" aria-hidden="true"></span>
+              <div><strong>Chip Recovery 3</strong><p>Detailed demo loading area</p></div>
+            </div>
+          </figure>
+          <figure class="demo-card demo-card-portrait">
+            <div class="video-placeholder demo-video portrait-demo-video" data-video="assets/videos/detailed-block-portrait.mp4" data-aspect="720 / 1280" data-direct-autoplay="true" role="img" aria-label="Detailed block recovery portrait demo">
+              <span class="play-mark" aria-hidden="true"></span>
+              <div><strong>Block Recovery</strong><p>Portrait demo loading area</p></div>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="condition" class="section-shell condition-section reveal">
+      <div class="section-kicker">Condition</div>
+      <div class="section-heading">
+        <h2>Value estimates become conditions for policy improvement.</h2>
+        <p>Robo-ValueRL treats value reliability as an interface between heterogeneous robot experience and downstream policy learning.</p>
+      </div>
+
+      <div class="condition-panel">
+        <div class="condition-copy">
+          <p>
+            A history-conditioned value estimator infers task progress from multi-view observations and visual history.
+            Its value differences are converted into action-quality indicators, allowing the VLA policy to condition on
+            high-quality behavior during offline pretraining.
+          </p>
+          <p>
+            During online improvement, the same value guidance filters rollout segments and activates a lightweight
+            residual adapter only where targeted correction is useful. This keeps adaptation focused while preserving
+            the pretrained behavior prior.
+          </p>
+          <div class="condition-points" aria-label="Conditioning signals">
+            <span>History-conditioned value</span>
+            <span>Action-quality condition</span>
+            <span>Value-guided residual adaptation</span>
           </div>
         </div>
+        <figure class="condition-figure">
+          <img src="assets/figures/condition-teaser.png" alt="Robo-ValueRL value conditioning overview">
+        </figure>
       </div>
     </section>
 
@@ -330,15 +366,8 @@
       <div class="section-kicker">Citation</div>
       <div class="section-heading">
         <h2>Cite Robo-ValueRL.</h2>
-        <p>Paper, data, and videos are organized for release. For questions, please open an issue on GitHub.</p>
+        <p>Citation will be updated after the arXiv release.</p>
       </div>
-      <pre class="bibtex" id="bibtex">@inproceedings{xia2026robovaluerl,
-  title={Robo-ValueRL: Reliable Value Estimation for Offline-to-Online Reinforcement Learning},
-  author={Xia, Wenke and Ren, Pei and Yu, Wenbo and Zhang, Yizhuo and Li, Jifan and Zhang, Yixue and Zhao, Yinuo and Gao, Qingyang and Fu, Jianlong and Tang, Jian and Che, Zhengping and Hu, Di},
-  booktitle={Conference on Robot Learning},
-  year={2026}
-}</pre>
-      <button class="copy-button" type="button" data-copy-target="bibtex">Copy BibTeX</button>
     </section>
   </main>
 
